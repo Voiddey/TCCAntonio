@@ -1,0 +1,43 @@
+const express = require('express')
+const {PORT} = require('./variaveis_compartilhadas/variaveiscomp')
+
+const AcessoriosRouterLoader = require('./routes/Acessorios.router.loader')
+const AcordeaoRouterLoader = require('./routes/Acordeao.router.loader')
+const BaixoRouterLoader = require('./routes/Baixo.router.loader')
+const BateriaRouterLoader = require("./routes/Bateria.router.loader")
+const CordasRouterLoader = require("./routes/Cordas.router.loader")
+const FlautaDoceRouterLoader = require("./routes/FlautaDoce.router.loader")
+const FlautaTransversalRouterLoader = require("./routes/FlautaTransversal.router.loader")
+const GuitarraRouterLoader = require("./routes/Guitarra.router.loader")
+const PianoRouterLoader = require("./routes/Piano.router.loader")
+const SaxofoneRouterLoader = require("./routes/Saxofone.router.loader")
+const SomRouterLoader = require("./routes/Som.router.loader")
+const TecladoRouterLoader = require("./routes/Teclado.router.loader")
+const TrompeteRouterLoader = require("./routes/Trompete.router.loader")
+const UserRouterLoader = require("./routes/Usuario.router.loader")
+const ViolaoRouterLoader = require("./routes/Violao.router.loader")
+const app = new express()
+
+app.use(express.json())
+
+app.listen(PORT, aoLigarServidor)
+ 
+function aoLigarServidor() {
+    console.log(`SERVIDOR LIGADO NA PORTA ${PORT}`)
+}
+
+AcessoriosRouterLoader.load(app)
+AcordeaoRouterLoader.load(app)
+BaixoRouterLoader.load(app)
+BateriaRouterLoader.load(app)
+CordasRouterLoader.load(app)
+FlautaDoceRouterLoader.load(app)
+FlautaTransversalRouterLoader.load(app)
+GuitarraRouterLoader.load(app)
+PianoRouterLoader.load(app)
+SaxofoneRouterLoader.load(app)
+SomRouterLoader.load(app)
+TecladoRouterLoader.load(app)
+TrompeteRouterLoader.load(app)
+UserRouterLoader.load(app)
+ViolaoRouterLoader.load(app)
